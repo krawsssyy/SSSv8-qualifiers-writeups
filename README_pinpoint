@@ -1,0 +1,8 @@
+# Name : Bardas Alexandru-Cristian
+# Challange : Pinpoint
+
+Solution : 
+First, running the binary seems to ask for an address and a value to write to that address.
+After dissasembling it in Ghidra, we can notice that the address is 'unsigned long'(%lu), and the value is 'unsigned char'(%hhu)(the 2 h's are ignored). We can also see, in the main function, a check is made on a variable called 'v' such that it's value is 0x53585353, and if that check is true, then a system call is made to execute /bin/sh. We check the security attributes of the binary and PIE is not enabled, meaning that variable will have the same address every time we run the binary.
+So, we will have to overwrite the byte located at v's address + 2, i.e. 0x60105A, which is 6295642 with the value 0x58, which is 88 in decimal.
+Using netcat to connect to the server, with `nc -nv 141.85.224.99 31337` and putting 6295642 as an address and 88 as a value, we get a shell. Navigating to /home/ctf, we see a file called flag, and using cat on it we get the flag.

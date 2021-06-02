@@ -1,0 +1,5 @@
+# Name : Bardas Alexandru-Cristian
+# Challange : One By One
+
+Solution : 
+Disassembling the file using Ghidra, we notice there are some variables called part0, part1, up untill part27, and they are hex values that span 1 byte, meaning 1 character, and also that part0, part1 and part2 are the same(SSS), which is the beginning of the flag, and part4 and part27 are {, respectively }. We then  and reconstruct the flag's bytes using the values in memory(part0,part1... up to part27), values which are then put into a HEX to ASCII converter to get the flag.

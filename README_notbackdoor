@@ -1,0 +1,6 @@
+# Name : Bardas Alexandru-Cristian
+# Challenge : Not Backdoor
+
+Solution : 
+Disassembling the file in Ghidra, we navigate through the functions and rule out the useless or unreachable functions.
+When the arrive at 'FUN_004006b6', which seems pretty interesting from our point of view.It has a big byte array, with the first 3 entries being the same. It then XOR's each entry of the array with the given parameter of the function, and then displays the flag. Knowing that the first letter of the flag is S, I worked out what the parameters needs to be(let A be a byte, then 0x3C ^ A = 0x53). We then compute that byte A, and it evaluates to 111 in decimal. I then rewrote the function in C++, and used 111 as a parameter to get the flag.

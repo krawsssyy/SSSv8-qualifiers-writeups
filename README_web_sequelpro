@@ -1,0 +1,5 @@
+# Name : Bardas Alexandru-Cristian
+# Challenge : Web:Sequel Pro
+
+Solution :
+Doing basic SQL injection on the password field(breaking out of the WHERE clause)(' or '1' = '1';) i noticed that there was an error in the fetch_array() function about a boolean value , error which was thrown back as a result. Assuming there is a check after the WHERE clause, and finding out that fetch_array() is a mysqli thing, i just commented the code(-- , space included) after the injected SQL and got the flag.

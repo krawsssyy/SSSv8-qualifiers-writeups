@@ -1,0 +1,6 @@
+# Name : Bardas Alexandru-Cristian
+# Challenge : Mirror me
+
+Solution : 
+Running the binary, we notice that it asks us for two numbers and performs a check on them.Disassembling the binary with Ghidra, we notice that the check is that the product of the two numbers we've inputted is equal to a number that is the return value of a function called 'max_mirror()'. Upon first inspection, we notice another function being called over there, a function called 'check_cond()'. We check the 'check_cond()' function and one can quickly realize that the function is actually a check if the number is a palindrome. We then rewrite the two functions 'check_cond()' and 'max_mirror()' and put them in a C file, compile it and run the get the maximum value of 906609. Using a simple python script, we get all the divisors of that number, and pick any two such that their product is 906609(I've chosen 913 and 993).
+We then connect to the server using netcat by `nc -nv 141.85.224.99 31338` and input the two number, after which we get a shell. We then navigate to /home/ctf/ and cat out the flag file and get the flag.

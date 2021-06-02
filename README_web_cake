@@ -1,0 +1,6 @@
+# Name : Bardas Alexandru-Cristian
+# Challenge : Web:Cake
+
+
+Solution : 
+We open up the page and inspect it's source. Nothing odd untill now. We go to the networking tab and notice the cookie has a flag key and the value is empty. Making a get request with the flag set to apple pie will give the flag in the response cookie.

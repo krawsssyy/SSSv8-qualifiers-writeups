@@ -1,0 +1,11 @@
+# Name : Bardas Alexandru-Cristian
+# Challenge : Black Hole
+
+Solution : 
+Using ltrace on the given file, we can notice an fopen() call with the arguments '/dev/null' and 'wb'.
+We delete /dev/null and run the program, and then we use `cat /dev/null` to get the flag.
+Then, to restore /dev/null, i ran 
+
+```bash
+rm /dev/null && mknod -m666 /dev/null c 1 3
+```

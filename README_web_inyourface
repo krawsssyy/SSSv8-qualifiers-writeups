@@ -1,0 +1,5 @@
+# Name : Bardas Alexandru-Cristian
+# Challenge : Web:In Your Face
+
+Solution :
+Open up the page and view the source of it. In the page's source there's a base64 string as a comment. We decode that and get the flag.
